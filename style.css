@@ -1,0 +1,23 @@
+#digging_plots{
+    display:grid;
+    grid-template-columns: repeat(5,100px);
+    grid-template-rows: repeat(5,100px);
+    gap:15px;*/
+}
+
+.plot{
+    background-color:rgba(128, 70, 34, 0.8);
+    border-radius: 15px;*/
+}
+
+body{
+    background-color: rgb(51, 25, 8);
+}
+
+.my_text{
+    color:white;
+}
+
+.horizontal_line{
+    width: 90%;
+}
