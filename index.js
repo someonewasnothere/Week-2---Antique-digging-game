@@ -1,14 +1,27 @@
 const plots = document.querySelectorAll('.plot');
+const selectedAction=null;
+let gold = 0;
+const prices ={
+    small:{sell: 10},
+    medium:{sell: 20},
+    large:{sell: 50},
+}
 
-/*DIGGING PLOTS TECH*/
+let inventory ={
+    smallFossils:0,
+    mediumFossils:0,
+    largeFossils:0,
+}
+
+/*DIGGING PLOTS TECH + LEVELS*/
 plots.forEach(plot =>{
     plot.addEventListener('click', () =>{
-        if (plot.classList.contains('dug')){
+        if (plot.classList.contains('fully-dug')){
              return;
         }
            
         let layers_left= parseInt(plot.getAttribute('data-layer'));
-        layers_left--
+        layers_left-= 1
         plot.classList.add('dug');
         plot.setAttribute('data-layer',layers_left);
 
@@ -25,3 +38,4 @@ plots.forEach(plot =>{
 
     });
 });
+

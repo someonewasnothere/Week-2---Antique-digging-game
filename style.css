@@ -2,12 +2,13 @@
     display:grid;
     grid-template-columns: repeat(5,100px);
     grid-template-rows: repeat(5,100px);
-    gap:15px;
+    /*gap:15px;*/
 }
 
 .plot{
     background-color:rgba(128, 70, 34, 0.8);
-    border-radius: 15px;
+    /*border-radius: 15px;*/
+    
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
 
@@ -15,9 +16,11 @@
 
 .plot.layer-2{
     background-color: rgba(102, 56, 27, 0.8);
+    cursor:pointer;
 }
 .plot.layer-1{
-    background-color: rgba(82, 45, 21, 0.8);
+    background-color: rgba(74, 40, 18, 0.8);
+    cursor:pointer;
 }
 
 .plot.fully-dug{
@@ -30,14 +33,11 @@
     transform: scale(1.1);
 }
 
-.plot.dug{
-    background-color: rgba(70, 35, 15, 0.9);
-    transform: scale(0.5);
-}
-
 body{
     background-color: rgb(51, 25, 8);
+    cursor: url('shovel.png'), auto;
 }
+
 
 .my_text{
     color:white;
