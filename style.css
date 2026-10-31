@@ -1,48 +1,239 @@
-#digging_plots{
-    display:grid;
-    grid-template-columns: repeat(5,100px);
-    grid-template-rows: repeat(5,100px);
-    /*gap:15px;*/
+/* style.css */
+body {
+  background-color: rgb(20, 10, 3);
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
 }
 
-.plot{
-    background-color:rgba(128, 70, 34, 0.8);
-    /*border-radius: 15px;*/
-    
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-
+.my_text {
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.plot.layer-2{
-    background-color: rgba(102, 56, 27, 0.8);
-    cursor:pointer;
-}
-.plot.layer-1{
-    background-color: rgba(74, 40, 18, 0.8);
-    cursor:pointer;
+.horizontal_line {
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 25px;
 }
 
-.plot.fully-dug{
-    background-color:rgba(33, 18, 9, 0.8);
-    cursor:default;
+.game-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.plot:hover{
-    background-color: rgba(150, 85, 42, 0.9);
-    transform: scale(1.1);
+/* Digging Zone */
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-body{
-    background-color: rgb(51, 25, 8);
-    cursor: url('shovel.png'), auto;
+.game-stats {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+  align-items: center;
 }
 
-
-.my_text{
-    color:white;
+.stat-box {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.horizontal_line{
-    width: 90%;
+.action-btn {
+  padding: 8px 16px;
+  background-color: #8b5a2b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.action-btn:hover {
+  background-color: #a06b37;
+}
+
+#digging_plots {
+  display: grid;
+  grid-template-columns: repeat(5, 90px);
+  grid-template-rows: repeat(5, 90px);
+  gap: 4px;
+  background-color: #0c0502;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.plot {
+  position: relative;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Custom shovel cursor when over diggable dirt */
+.plot.diggable {
+  cursor: url('shovel.png'), pointer;
+}
+
+/* Distinctly darker progressive layer colors */
+.plot.layer-4 {
+  background-color: #a0522d; /* Surface: Sienna/Warm brown */
+}
+
+.plot.layer-3 {
+  background-color: #6e3518; /* Depth 1: Medium-dark brown */
+}
+
+.plot.layer-2 {
+  background-color: #3d1c0b; /* Depth 2: Deep dark soil */
+}
+
+.plot.layer-1 {
+  background-color: #1a0a04; /* Depth 3: Near-black dirt */
+}
+
+.plot.fully-dug {
+  background-color: #080301; /* Fully dug: Pitch black bedrock */
+  cursor: pointer;
+}
+
+.plot.diggable:hover {
+  filter: brightness(1.2);
+  transform: scale(1.03);
+}
+
+/* Right Panel / Shop */
+.right-panel {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gold-container {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #2b170a;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #5a3217;
+  text-align: center;
+}
+
+.shop-section {
+  background-color: #2b170a;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #5a3217;
+}
+
+.section-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  border-bottom: 1px solid #5a3217;
+  padding-bottom: 8px;
+}
+
+.shop-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  background-color: #1a0d04;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.shop-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.shop-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-size: 0.85rem;
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.sell-btn {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sell-btn:hover {
+  background-color: #388e3c;
+}
+
+.sell-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Museum Index */
+.index-section {
+  max-width: 800px;
+  margin: 30px auto 0 auto;
+  background-color: #2b170a;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #5a3217;
+}
+
+.museum-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.museum-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background-color: #1a0d04;
+  padding: 15px;
+  border-radius: 6px;
+  width: 120px;
+  border: 1px solid #5a3217;
+}
+
+.museum-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.museum-card.locked .museum-img {
+  filter: brightness(0);
+  opacity: 0.2;
+}
+
+.museum-card.locked span {
+  color: #777;
 }

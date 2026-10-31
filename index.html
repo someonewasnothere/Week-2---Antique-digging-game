@@ -3,49 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fossil Finders</title>
-  
+  <title>Fossil Finder</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1 align=center class="my_text">Fossil Finders</h1>
-<hr class="horizontal_line">
+  <header>
+    <h1 class="my_text">Fossil Finder</h1>
+    <hr class="horizontal_line">
+  </header>
 
-<!--Digging plots-->
-<div>
-    <h2 class="my_text">DIGGING ZONE</h2>
-    <div id="digging_plots">
-        
-        <div class="plot" data-index="1" data-layer="3"></div>
-        <div class="plot" data-index="2" data-layer="3"></div>
-        <div class="plot" data-index="3" data-layer="3"></div>
-        <div class="plot" data-index="4" data-layer="3"></div>
-        <div class="plot" data-index="5" data-layer="3"></div>
-        <div class="plot" data-index="6" data-layer="3"></div>
-        <div class="plot" data-index="7" data-layer="3"></div>
-        <div class="plot" data-index="8" data-layer="3"></div>
-        <div class="plot" data-index="9" data-layer="3"></div>
-        <div class="plot" data-index="10" data-layer="3"></div>
-        <div class="plot" data-index="11" data-layer="3"></div>
-        <div class="plot" data-index="12" data-layer="3"></div>
-        <div class="plot" data-index="13" data-layer="3"></div>
-        <div class="plot" data-index="14" data-layer="3"></div>
-        <div class="plot" data-index="15" data-layer="3"></div>
-        <div class="plot" data-index="16" data-layer="3"></div>
-        <div class="plot" data-index="17" data-layer="3"></div>
-        <div class="plot" data-index="18" data-layer="3"></div>
-        <div class="plot" data-index="19" data-layer="3"></div>
-        <div class="plot" data-index="20" data-layer="3"></div>
-        <div class="plot" data-index="21" data-layer="3"></div>
-        <div class="plot" data-index="22" data-layer="3"></div>
-        <div class="plot" data-index="23" data-layer="3"></div>
-        <div class="plot" data-index="24" data-layer="3"></div>
-        <div class="plot" data-index="25" data-layer="3"></div>
+  <main class="game-container">
+    <!-- Left Column: Digging Grid & Stats -->
+    <div class="left-panel">
+      <div class="game-stats">
+        <div class="stat-box">Digs Left: <span id="digs-count">40</span> / 40</div>
+        <button id="reset-btn" class="action-btn">New Dig Site</button>
+      </div>
+
+      <div id="digging_plots">
+        <!-- 25 Plot elements -->
+        <div class="plot" data-index="0" data-layer="4"></div>
+        <div class="plot" data-index="1" data-layer="4"></div>
+        <div class="plot" data-index="2" data-layer="4"></div>
+        <div class="plot" data-index="3" data-layer="4"></div>
+        <div class="plot" data-index="4" data-layer="4"></div>
+        <div class="plot" data-index="5" data-layer="4"></div>
+        <div class="plot" data-index="6" data-layer="4"></div>
+        <div class="plot" data-index="7" data-layer="4"></div>
+        <div class="plot" data-index="8" data-layer="4"></div>
+        <div class="plot" data-index="9" data-layer="4"></div>
+        <div class="plot" data-index="10" data-layer="4"></div>
+        <div class="plot" data-index="11" data-layer="4"></div>
+        <div class="plot" data-index="12" data-layer="4"></div>
+        <div class="plot" data-index="13" data-layer="4"></div>
+        <div class="plot" data-index="14" data-layer="4"></div>
+        <div class="plot" data-index="15" data-layer="4"></div>
+        <div class="plot" data-index="16" data-layer="4"></div>
+        <div class="plot" data-index="17" data-layer="4"></div>
+        <div class="plot" data-index="18" data-layer="4"></div>
+        <div class="plot" data-index="19" data-layer="4"></div>
+        <div class="plot" data-index="20" data-layer="4"></div>
+        <div class="plot" data-index="21" data-layer="4"></div>
+        <div class="plot" data-index="22" data-layer="4"></div>
+        <div class="plot" data-index="23" data-layer="4"></div>
+        <div class="plot" data-index="24" data-layer="4"></div>
+      </div>
     </div>
-</div>
 
-<script src="index.js"></script>
+    <!-- Right Column: Gold & Shop -->
+    <div class="right-panel">
+      <div class="gold-container">
+        Gold: <span id="gold-amount">0</span> 🪙
+      </div>
 
+      <div class="shop-section">
+        <h2 class="section-title">Fossil Shop</h2>
+        
+        <div class="shop-item">
+          <img src="small fossil.png" alt="Small Fossil" class="shop-img">
+          <div class="shop-info">
+            <span class="item-name">Small Fossil</span>
+            <span class="item-count">Inventory: <span id="small-count">0</span></span>
+            <span class="item-price">Value: 10 Gold</span>
+          </div>
+          <button id="sell-small-btn" class="sell-btn">Sell</button>
+        </div>
+
+        <div class="shop-item">
+          <img src="medium fossil.png" alt="Medium Fossil" class="shop-img">
+          <div class="shop-info">
+            <span class="item-name">Medium Fossil</span>
+            <span class="item-count">Inventory: <span id="medium-count">0</span></span>
+            <span class="item-price">Value: 25 Gold</span>
+          </div>
+          <button id="sell-medium-btn" class="sell-btn">Sell</button>
+        </div>
+
+        <div class="shop-item">
+          <img src="large dino skull.png" alt="Large Dino Skull" class="shop-img">
+          <div class="shop-info">
+            <span class="item-name">Large Dino Skull</span>
+            <span class="item-count">Inventory: <span id="large-count">0</span></span>
+            <span class="item-price">Value: 60 Gold</span>
+          </div>
+          <button id="sell-large-btn" class="sell-btn">Sell</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Section: Museum Index -->
+  <section class="index-section">
+    <h2 class="section-title">Museum Index</h2>
+    <div class="museum-grid">
+      <div id="museum-small" class="museum-card locked">
+        <img src="small fossil.png" alt="Small Fossil" class="museum-img">
+        <span>Small Fossil</span>
+      </div>
+      <div id="museum-medium" class="museum-card locked">
+        <img src="medium fossil.png" alt="Medium Fossil" class="museum-img">
+        <span>Medium Fossil</span>
+      </div>
+      <div id="museum-large" class="museum-card locked">
+        <img src="large dino skull.png" alt="Large Dino Skull" class="museum-img">
+        <span>Large Dino Skull</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="index.js"></script>
 </body>
 </html>
