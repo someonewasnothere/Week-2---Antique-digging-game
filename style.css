@@ -1,4 +1,3 @@
-/* style.css */
 body {
   background-color: rgb(20, 10, 3);
   color: white;
@@ -82,30 +81,30 @@ body {
   user-select: none;
 }
 
-/* Custom shovel cursor when over diggable dirt */
+/* Shovel cursor over diggable plot tiles */
 .plot.diggable {
-  cursor: url('shovel.png'), pointer;
+  cursor: url('shovel.png'), auto;
 }
 
-/* Distinctly darker progressive layer colors */
+/* Progressive layer colors */
 .plot.layer-4 {
-  background-color: #a0522d; /* Surface: Sienna/Warm brown */
+  background-color: #c86432;
 }
 
 .plot.layer-3 {
-  background-color: #6e3518; /* Depth 1: Medium-dark brown */
+  background-color: #964b22;
 }
 
 .plot.layer-2 {
-  background-color: #3d1c0b; /* Depth 2: Deep dark soil */
+  background-color: #5a2810;
 }
 
 .plot.layer-1 {
-  background-color: #1a0a04; /* Depth 3: Near-black dirt */
+  background-color: #281205;
 }
 
 .plot.fully-dug {
-  background-color: #080301; /* Fully dug: Pitch black bedrock */
+  background-color: #080301;
   cursor: pointer;
 }
 
@@ -151,10 +150,15 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   background-color: #1a0d04;
   padding: 8px;
   border-radius: 4px;
+}
+
+.shop-item.special-item {
+  border: 1px solid #d4af37;
+  background-color: #261b04;
 }
 
 .shop-img {
@@ -195,6 +199,26 @@ body {
   opacity: 0.5;
 }
 
+.buy-btn {
+  background-color: #b8860b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buy-btn:hover {
+  background-color: #d4af37;
+}
+
+.buy-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 /* Museum Index */
 .index-section {
   max-width: 800px;
@@ -208,32 +232,69 @@ body {
 .museum-grid {
   display: flex;
   justify-content: space-around;
-  gap: 20px;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
 .museum-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background-color: #1a0d04;
-  padding: 15px;
+  padding: 12px;
   border-radius: 6px;
-  width: 120px;
+  width: 110px;
   border: 1px solid #5a3217;
+  font-size: 0.85rem;
 }
 
 .museum-img {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
-.museum-card.locked .museum-img {
+.museum-card.locked .museum-img,
+.museum-coin-card.locked .museum-coin-img {
   filter: brightness(0);
   opacity: 0.2;
 }
 
-.museum-card.locked span {
+.museum-card.locked span:not(.found-counter),
+.museum-coin-card.locked .coin-title {
   color: #777;
+}
+
+.found-counter {
+  font-size: 0.75rem;
+  color: #d4af37;
+}
+
+/* Massive Square Terra Coin Card */
+.museum-coin-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a0d04;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #d4af37;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.museum-coin-img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.coin-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d4af37;
+  margin-bottom: 5px;
 }

@@ -89,6 +89,26 @@
           </div>
           <button id="sell-large-btn" class="sell-btn">Sell</button>
         </div>
+
+        <div class="shop-item">
+          <img src="diamond.png" alt="Diamond" class="shop-img">
+          <div class="shop-info">
+            <span class="item-name">Diamond</span>
+            <span class="item-count">Inventory: <span id="diamond-count">0</span></span>
+            <span class="item-price">Value: 200 Gold</span>
+          </div>
+          <button id="sell-diamond-btn" class="sell-btn">Sell</button>
+        </div>
+
+        <!-- Ultimate Terra Coin Purchase -->
+        <div class="shop-item special-item">
+          <img src="Ultimate TerraCoin.png" alt="Ultimate Terra Coin" class="shop-img">
+          <div class="shop-info">
+            <span class="item-name">Ultimate Terra Coin</span>
+            <span class="item-price">Cost: 100 Gold</span>
+          </div>
+          <button id="buy-coin-btn" class="buy-btn">Buy</button>
+        </div>
       </div>
     </div>
   </main>
@@ -100,15 +120,30 @@
       <div id="museum-small" class="museum-card locked">
         <img src="small fossil.png" alt="Small Fossil" class="museum-img">
         <span>Small Fossil</span>
+        <span class="found-counter">Found: <span id="found-small">0</span></span>
       </div>
       <div id="museum-medium" class="museum-card locked">
         <img src="medium fossil.png" alt="Medium Fossil" class="museum-img">
         <span>Medium Fossil</span>
+        <span class="found-counter">Found: <span id="found-medium">0</span></span>
       </div>
       <div id="museum-large" class="museum-card locked">
         <img src="large dino skull.png" alt="Large Dino Skull" class="museum-img">
         <span>Large Dino Skull</span>
+        <span class="found-counter">Found: <span id="found-large">0</span></span>
       </div>
+      <div id="museum-diamond" class="museum-card locked">
+        <img src="diamond.png" alt="Diamond" class="museum-img">
+        <span>Diamond</span>
+        <span class="found-counter">Found: <span id="found-diamond">0</span></span>
+      </div>
+    </div>
+
+    <!-- Massive Terra Coin Index Banner -->
+    <div id="museum-coin" class="museum-coin-card locked">
+      <img src="Ultimate TerraCoin.png" alt="Ultimate Terra Coin" class="museum-coin-img">
+      <span class="coin-title">Ultimate Terra Coin</span>
+      <span class="found-counter">Owned: <span id="found-coin">0</span></span>
     </div>
   </section>
 
