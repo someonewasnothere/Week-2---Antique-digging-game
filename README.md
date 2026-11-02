@@ -13,3 +13,9 @@ CONTROLS:
 OBJECTIVES:
     -collect all of the fossils in the index
     -buy the Ultimate TerraCoin to prove your mastery
+
+
+
+HOW TO RUN:
+    -Runs on a browser (its ran with HTML)
+    -Works on laptop for sure, should work on mobile too i think
